@@ -3,4 +3,4 @@
 	url = https://github.com/katekate7/bank-backend.git
 [submodule "bank-frontend"]
 	path = bank-frontend
-	url = https://github.com/katekate7/bank-frontend.git 
+	url = https://github.com/katekate7/bank-frontend.git
