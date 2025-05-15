@@ -2,16 +2,16 @@ version: '3.8'
 
 services:
   frontend:
-    build: ./bank-frontend
+    image: kate0079887/bank-frontend
     ports:
-      - "3000:3000"
+      - "3000:4173"
     networks:
       - app-network
 
   backend:
-    build: ./bank-backend
+    build: kate0079887/bank-backend
     ports:
-      - "8000:8000"
+      - "8000:80"
     networks:
       - app-network
     depends_on:
@@ -34,3 +34,45 @@ networks:
 
 volumes:
   dbdata:
+
+
+# version: '3.8'
+
+# services:
+#   frontend:
+#     build:
+#       context: ./bank-frontend
+#     container_name: bank-frontend
+#     ports:
+#       - "3000:80"  
+#     networks:
+#       - app-network
+
+#   backend:
+#     build: ./bank-backend
+#     container_name: bank-backend
+#     ports:
+#       - "8000:80"
+#     networks:
+#       - app-network
+#     depends_on:
+#       - db
+
+#   db:
+#     image: mysql:8.0
+#     container_name: bank-db
+#     ports:
+#       - "3306:3306"
+#     environment:
+#       MYSQL_ROOT_PASSWORD: root
+#       MYSQL_DATABASE: mybank
+#     volumes:
+#       - dbdata:/var/lib/mysql
+#     networks:
+#       - app-network
+
+# networks:
+#   app-network:
+
+# volumes:
+#   dbdata:
